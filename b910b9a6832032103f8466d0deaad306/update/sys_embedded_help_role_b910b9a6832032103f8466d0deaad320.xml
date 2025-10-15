@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>10</order>
+        <role display_value="x_1780675_config_0.admin" name="x_1780675_config_0.admin">bd10b9a6832032103f8466d0deaad31d</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-15 16:07:05</sys_created_on>
+        <sys_id>b910b9a6832032103f8466d0deaad320</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>bd10b9a6832032103f8466d0deaad31d</sys_name>
+        <sys_package display_value="Config Drift Management" source="x_1780675_config_0">b910b9a6832032103f8466d0deaad306</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Config Drift Management">b910b9a6832032103f8466d0deaad306</sys_scope>
+        <sys_update_name>sys_embedded_help_role_b910b9a6832032103f8466d0deaad320</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-15 16:07:05</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-10-15 16:11:37</sys_created_on>
+        <sys_id>0021712a832032103f8466d0deaad38b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1780675_config_0_registered_app.x_1780675_config_0.user</sys_name>
+        <sys_package display_value="Config Drift Management" source="x_1780675_config_0">b910b9a6832032103f8466d0deaad306</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Config Drift Management">b910b9a6832032103f8466d0deaad306</sys_scope>
+        <sys_security_acl display_value="x_1780675_config_0_registered_app">8021712a832032103f8466d0deaad388</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_0021712a832032103f8466d0deaad38b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-10-15 16:11:37</sys_updated_on>
+        <sys_user_role display_value="x_1780675_config_0.user" name="x_1780675_config_0.user">fd10b9a6832032103f8466d0deaad322</sys_user_role>
+    </sys_security_acl_role>
+</record_update>
