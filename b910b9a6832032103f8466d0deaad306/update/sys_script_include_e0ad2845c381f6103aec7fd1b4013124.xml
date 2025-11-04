@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1780675_config_0.ScheduledUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>ScheduledUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var ScheduledUtils = Class.create();
+ScheduledUtils.prototype = {
+    
+	initialize: function() {
+    },
+
+	scanRegisteredApps: function() {
+
+		var regApp = new global.GlideQuery("x_1780675_config_0_registered_app")
+		.where("u_active", true)
+		.select("ci_retrieval_method", "u_last_scan")
+		.forEach(function(row) {
+			if(row.ci_retrieval_method == "assoc") {
+				this.retrieveMappedCIsAssoc(row);
+			} else if (regApp.ci_retrieval_method == "traverse") {
+				this.retrieveMappedCIsTraverse(row);
+			}
+			row.update({ u_last_scan: new GlideDateTime() });
+		});
+
+	},
+
+	retrieveMappedCIsAssoc: function(regApp) {
+		gs.info("Retrieve apps via assoc" + regApp.getDisplayValue("u_service_instance"));
+	},
+
+	retrieveMappedCIsTraverse: function(regApp) {
+		gs.info("Retrieve apps via traverse" + regApp.getDisplayValue("u_service_instance"));
+	},
+
+    type: 'ScheduledUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-04 16:29:07</sys_created_on>
+        <sys_id>e0ad2845c381f6103aec7fd1b4013124</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>ScheduledUtils</sys_name>
+        <sys_package display_value="Config Drift Management" source="x_1780675_config_0">b910b9a6832032103f8466d0deaad306</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Config Drift Management">b910b9a6832032103f8466d0deaad306</sys_scope>
+        <sys_update_name>sys_script_include_e0ad2845c381f6103aec7fd1b4013124</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-04 16:34:42</sys_updated_on>
+    </sys_script_include>
+</record_update>

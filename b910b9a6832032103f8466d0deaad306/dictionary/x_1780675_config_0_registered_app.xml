@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="0711312a832032103f8466d0deaad38f" label="Registered App" max_length="40" name="x_1780675_config_0_registered_app" type="collection"/>
+    <element db_object_id="0711312a832032103f8466d0deaad38f" label="Registered App" max_length="40" name="x_1780675_config_0_registered_app" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="CI retrieval method" mandatory="true" max_length="40" name="ci_retrieval_method" type="string">
+            <choice>
+                <element inactive_on_update="false" label="CI / Service associations" sequence="200" value="assoc"/>
+                <element inactive_on_update="false" label="Traverse CI relationships" sequence="100" value="traverse"/>
+            </choice>
+        </element>
+    </element>
 </database>
