@@ -17,22 +17,32 @@ ScheduledUtils.prototype = {
 
 	scanRegisteredApps: function() {
 
-		var regApp = new global.GlideQuery("x_1780675_config_0_registered_app")
-		.where("u_active", true)
-		.select("ci_retrieval_method", "u_last_scan")
-		.forEach(function(row) {
+		var regAppGr = new GlideRecord("x_1780675_config_0_registered_app");
+		regAppGr.addQuery("u_active", true);
+		regAppGr.query();
+
+		while(regAppGr.next()) {
+
 			if(row.ci_retrieval_method == "assoc") {
-				this.retrieveMappedCIsAssoc(row);
+				this.retrieveMappedCIsAssoc(regAppGr);
 			} else if (regApp.ci_retrieval_method == "traverse") {
-				this.retrieveMappedCIsTraverse(row);
+				this.retrieveMappedCIsTraverse(regAppGr);
 			}
-			row.update({ u_last_scan: new GlideDateTime() });
-		});
+
+			regAppGr.u_last_scan = new GlideDateTime();
+			regAppGr.update();
+		}
 
 	},
 
 	retrieveMappedCIsAssoc: function(regApp) {
-		gs.info("Retrieve apps via assoc" + regApp.getDisplayValue("u_service_instance"));
+		
+		var excludedCIClasses = gs.getProperty("x_1780675_config_0.excluded_ci_classes");
+
+		var assocGr = new GlideRecord("svc_ci_assoc");
+		// TODO: Finish query
+		assocGr.query();
+
 	},
 
 	retrieveMappedCIsTraverse: function(regApp) {
@@ -45,13 +55,13 @@ ScheduledUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-04 16:29:07</sys_created_on>
         <sys_id>e0ad2845c381f6103aec7fd1b4013124</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>ScheduledUtils</sys_name>
         <sys_package display_value="Config Drift Management" source="x_1780675_config_0">b910b9a6832032103f8466d0deaad306</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Config Drift Management">b910b9a6832032103f8466d0deaad306</sys_scope>
         <sys_update_name>sys_script_include_e0ad2845c381f6103aec7fd1b4013124</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-04 16:34:42</sys_updated_on>
+        <sys_updated_on>2025-11-14 07:25:00</sys_updated_on>
     </sys_script_include>
 </record_update>
