@@ -2,7 +2,7 @@
     <sys_dictionary action="INSERT_OR_UPDATE" element="ci_class" table="x_1780675_config_0_drift_standard">
         <active>true</active>
         <array>false</array>
-        <attributes>edge_encryption_enabled=true</attributes>
+        <attributes>base_table=cmdb,edge_encryption_enabled=true</attributes>
         <audit>false</audit>
         <calculation/>
         <choice/>
@@ -53,7 +53,7 @@
         <sys_scope display_value="Config Drift Management">b910b9a6832032103f8466d0deaad306</sys_scope>
         <sys_update_name>sys_dictionary_x_1780675_config_0_drift_standard_ci_class</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-15 07:06:40</sys_updated_on>
+        <sys_updated_on>2025-11-18 22:59:35</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

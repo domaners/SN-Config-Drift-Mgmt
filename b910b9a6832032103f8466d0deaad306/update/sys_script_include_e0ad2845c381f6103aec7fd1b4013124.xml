@@ -83,7 +83,7 @@ ScheduledUtils.prototype = {
 		for(var mKey in this.mappedCIArr) {
 
 			var mappedCIGr = new GlideRecord("x_1780675_config_0_mapped_ci");
-			mappedCIGr.addQuery("ui", this.mappedCIArr[mKey].ci);
+			mappedCIGr.addQuery("ci", this.mappedCIArr[mKey].ci);
 			mappedCIGr.addQuery("registered_app", this.mappedCIArr[mKey].registered_app);
 			mappedCIGr.query();
 
@@ -114,13 +114,13 @@ ScheduledUtils.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-11-04 16:29:07</sys_created_on>
         <sys_id>e0ad2845c381f6103aec7fd1b4013124</sys_id>
-        <sys_mod_count>25</sys_mod_count>
+        <sys_mod_count>26</sys_mod_count>
         <sys_name>ScheduledUtils</sys_name>
         <sys_package display_value="Config Drift Management" source="x_1780675_config_0">b910b9a6832032103f8466d0deaad306</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Config Drift Management">b910b9a6832032103f8466d0deaad306</sys_scope>
         <sys_update_name>sys_script_include_e0ad2845c381f6103aec7fd1b4013124</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-15 07:22:01</sys_updated_on>
+        <sys_updated_on>2025-11-18 22:44:33</sys_updated_on>
     </sys_script_include>
 </record_update>

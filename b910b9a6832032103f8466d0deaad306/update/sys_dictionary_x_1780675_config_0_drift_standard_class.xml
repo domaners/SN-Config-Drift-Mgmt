@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="threshold" table="x_1780675_config_0_drift_standard">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="class" table="x_1780675_config_0_drift_standard">
         <active>true</active>
         <array>false</array>
-        <attributes>edge_encryption_enabled=true</attributes>
+        <attributes>base_table=cmdb,encode_utf8=false</attributes>
         <audit>false</audit>
         <calculation/>
-        <choice>1</choice>
+        <choice/>
         <choice_field/>
         <choice_table/>
-        <column_label>Threshold</column_label>
+        <column_label>Class</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
         <defaultsort/>
         <delete_roles/>
-        <dependent>type</dependent>
-        <dependent_on_field>type</dependent_on_field>
+        <dependent/>
+        <dependent_on_field/>
         <display>false</display>
         <dynamic_creation>false</dynamic_creation>
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>threshold</element>
+        <element>class</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <formula/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="String">string</internal_type>
-        <mandatory>true</mandatory>
-        <max_length>40</max_length>
+        <internal_type display_value="">table_name</internal_type>
+        <mandatory>false</mandatory>
+        <max_length>32</max_length>
         <name>x_1780675_config_0_drift_standard</name>
         <next_element/>
         <primary>false</primary>
@@ -46,18 +46,18 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2025-11-14 17:28:20</sys_created_on>
-        <sys_name>Threshold</sys_name>
+        <sys_created_on>2025-11-18 22:16:28</sys_created_on>
+        <sys_name>Class</sys_name>
         <sys_package display_value="Config Drift Management" source="x_1780675_config_0">b910b9a6832032103f8466d0deaad306</sys_package>
         <sys_policy/>
         <sys_scope display_value="Config Drift Management">b910b9a6832032103f8466d0deaad306</sys_scope>
-        <sys_update_name>sys_dictionary_x_1780675_config_0_drift_standard_threshold</sys_update_name>
+        <sys_update_name>sys_dictionary_x_1780675_config_0_drift_standard_class</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-11-18 22:54:01</sys_updated_on>
+        <sys_updated_on>2025-11-18 23:01:00</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
-        <use_dependent_field>true</use_dependent_field>
+        <use_dependent_field>false</use_dependent_field>
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
