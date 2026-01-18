@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1780675_config_0.DriftComparisonUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>DriftComparisonUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var DriftComparisonUtils = Class.create();
+DriftComparisonUtils.prototype = {
+    
+	PROPERTIES: {
+		"REMEDIATION_TASKS_ENABLED": gs.getProperty("x_1780675_config_0.remediation_tasks_enabled"),
+		"REMEDIATION_TASK_TABLE": gs.getProperty("x_1780675_config_0.remediation_task_table")
+	},
+
+	resultVal: "",
+	
+	initialize: function() {
+    },
+
+	compareDrift: function(driftStandardGr) {
+		if(driftStandardGr.type == "compare_prod")
+			this.compareDriftProdSubprod(driftStandardGr);
+	},
+
+	compareDriftProdSubprod: function(driftStandardGr) {
+		
+		var prodCI = driftStandardGr.prod_ci.ci.getRefRecord();
+		var subprodCI = driftStandardGr.subprod_ci.ci.getRefRecord();
+		
+		var attribute = driftStandardGr.attribute+'';
+		var threshold = driftStandardGr.threshold+'';
+		var prodValue, subprodValue;
+		var passDrift = true;
+
+		gs.info("AND RUN DRIFT CHECK");
+		gs.info("AND prod CI is valid: " + prodCI.isValidRecord());
+		gs.info("AND subprod CI is valid: " + subprodCI.isValidRecord());
+		gs.info("AND Subprod " + attribute + " value: " + subprodCI.getValue(attribute));
+
+		// For greater or less than comparisons, use Integer values, otherwise string
+		if (threshold == "less_than" || threshold == "greater_than") {
+			prodValue = parseInt(prodCI.getValue(attribute));
+			subprodValue = parseInt(subprodCI.getValue(attribute));
+		} else {
+			prodValue = prodCI.getValue(attribute)+'';
+			subprodValue = subprodCI.getValue(attribute)+'';
+		}
+
+		if ((threshold == "less_than" && subprodValue < prodValue)
+			|| (threshold == "greater_than" && subprodValue > prodValue)
+			|| (threshold == "is_not" && subprodValue !== prodValue))
+			passDrift = false;
+
+		gs.info("AND BUILD RESULT OBJECT");
+
+		var resultObj = {
+			"date": new GlideDate(),
+			"drift_standard": driftStandardGr.sys_id+'',
+			"result": passDrift,
+			"prod_value": prodValue,
+			"subprod_value": subprodValue,
+			"threshold": threshold,
+			"attribute": attribute
+		};
+
+		gs.info(JSON.stringify(resultObj));
+
+		this.resultVal = passDrift;
+		this.createResultRecord(resultObj);
+
+	},
+
+	createResultRecord: function(resultObj) {
+		
+		var driftResultGr = new GlideRecord("x_1780675_config_0_drift_result");
+		driftResultGr.initialize();
+		driftResultGr.date = resultObj.date;
+		driftResultGr.drift_standard = resultObj.drift_standard;
+		driftResultGr.result = resultObj.result;
+		driftResultGr.prod_value = resultObj.prod_value;
+		driftResultGr.subprod_value = resultObj.subprod_value;
+		driftResultGr.threshold = resultObj.threshold;
+		driftResultGr.attribute = resultObj.attribute;
+		driftResultGr.insert();
+
+	},
+
+    type: 'DriftComparisonUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-14 17:35:25</sys_created_on>
+        <sys_id>9eb36458c39172103aec7fd1b4013111</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>DriftComparisonUtils</sys_name>
+        <sys_package display_value="Config Drift Management" source="x_1780675_config_0">b910b9a6832032103f8466d0deaad306</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Config Drift Management">b910b9a6832032103f8466d0deaad306</sys_scope>
+        <sys_update_name>sys_script_include_9eb36458c39172103aec7fd1b4013111</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-20 13:21:57</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="ab615b1cc3d5b2103aec7fd1b40131cd" label="Drift Result" max_length="40" name="x_1780675_config_0_drift_result" type="collection">
+        <element label="Date" max_length="40" name="date" type="glide_date"/>
+        <element label="Drift standard" max_length="32" name="drift_standard" reference="x_1780675_config_0_drift_standard" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Attribute" max_length="40" name="attribute" type="string"/>
+        <element label="Threshold" max_length="40" name="threshold" type="string"/>
+        <element label="Prod value" max_length="40" name="prod_value" type="string"/>
+        <element label="Subprod value" max_length="40" name="subprod_value" type="string"/>
+        <element label="Result" max_length="40" name="result" type="boolean"/>
+        <index name="index">
+            <element name="drift_standard"/>
+        </index>
+    </element>
+</database>
