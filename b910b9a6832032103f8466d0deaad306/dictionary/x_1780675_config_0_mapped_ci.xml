@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="aaf9c401c38db6103aec7fd1b4013107" label="Mapped CI" max_length="40" name="x_1780675_config_0_mapped_ci" type="collection">
-        <element label="CI" max_length="32" name="ci" reference="cmdb_ci" type="reference"/>
-        <element label="Depth" max_length="40" name="depth" read_only="true" type="integer"/>
         <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element label="Last discovered" max_length="40" name="last_discovered" read_only="true" type="glide_date_time"/>
         <element label="Registered App" max_length="32" name="registered_app" reference="x_1780675_config_0_registered_app" type="reference"/>
+        <element label="CI" max_length="32" name="ci" reference="cmdb_ci" type="reference"/>
         <element label="Active" max_length="40" name="active" read_only="true" type="boolean"/>
+        <element label="Depth" max_length="40" name="depth" read_only="true" type="integer"/>
         <element label="Service Instance" max_length="32" name="service_instance" reference="cmdb_ci_service_auto" type="reference"/>
         <index name="index">
             <element name="ci"/>

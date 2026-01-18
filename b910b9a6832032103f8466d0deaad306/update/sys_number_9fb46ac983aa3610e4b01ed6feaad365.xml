@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
+    <sys_number action="INSERT_OR_UPDATE">
+        <category display_value="" name="x_1780675_config_0_drift_result">x_1780675_config_0_drift_result</category>
+        <maximum_digits>7</maximum_digits>
+        <number>1000</number>
+        <prefix>DRI</prefix>
+        <sys_class_name>sys_number</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-18 14:11:59</sys_created_on>
+        <sys_id>9fb46ac983aa3610e4b01ed6feaad365</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DRI</sys_name>
+        <sys_package display_value="Config Drift Management" source="x_1780675_config_0">b910b9a6832032103f8466d0deaad306</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Config Drift Management">b910b9a6832032103f8466d0deaad306</sys_scope>
+        <sys_update_name>sys_number_9fb46ac983aa3610e4b01ed6feaad365</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-18 14:11:59</sys_updated_on>
+    </sys_number>
+</record_update>

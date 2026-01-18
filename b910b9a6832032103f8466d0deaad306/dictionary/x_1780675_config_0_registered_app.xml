@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="0711312a832032103f8466d0deaad38f" label="Registered App" max_length="40" name="x_1780675_config_0_registered_app" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="javascript:getNextObjNumberPadded();" dynamic_default_value="fdcb83a85f220100a9ad2572f2b4773c" label="Number" max_length="40" name="number" read_only="true" type="string" use_dynamic_default="true"/>
+        <element label="Business application" max_length="32" name="business_application" reference="cmdb_ci_business_app" type="reference"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="CI retrieval method" mandatory="true" max_length="40" name="ci_retrieval_method" type="string">
             <choice>
-                <element inactive_on_update="false" label="CI / Service associations" sequence="200" value="assoc"/>
                 <element inactive_on_update="false" label="Traverse CI relationships" sequence="100" value="traverse"/>
+                <element inactive_on_update="false" label="CI / Service associations" sequence="200" value="assoc"/>
             </choice>
         </element>
         <element label="Drift last evaluated" max_length="40" name="drift_last_evaluated" read_only="true" type="glide_date_time"/>
-        <element label="Service Instance" max_length="32" name="service_instance" reference="cmdb_ci_service_auto" type="reference"/>
-        <element attributes="edge_encryption_enabled=true" default="javascript:getNextObjNumberPadded();" dynamic_default_value="fdcb83a85f220100a9ad2572f2b4773c" label="Number" max_length="40" name="number" read_only="true" type="string" use_dynamic_default="true"/>
-        <element label="Business application" max_length="32" name="business_application" reference="cmdb_ci_business_app" type="reference"/>
         <element label="Last scan" max_length="40" name="last_scan" read_only="true" type="glide_date_time"/>
+        <element label="Service Instance" max_length="32" name="service_instance" reference="cmdb_ci_service_auto" type="reference"/>
         <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
         <index name="index">
             <element name="business_application"/>
